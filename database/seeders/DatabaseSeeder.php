@@ -14,34 +14,19 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         
-        \DB::table('specialties')->insert([
-            [
-                'name' => 'Cardiology',
-            ],
-            [
-                'name' => 'Ophtalmology',
-            ],
-            [
-                'name' => 'Oral Health',
-            ],
-        ]);
-        
         \DB::table('doctors')->insert([
             [
                 'lastname' => 'Myers',
                 'firstname' => 'Michael',
-                'specialty_id' => 1,
             ],
             [
                 'lastname' => 'Krueger',
                 'firstname' => 'Freddy',
-                'specialty_id' => 2,
             ],
             
             [
                 'lastname' => 'Voorhees',
                 'firstname' => 'Jason',
-                'specialty_id' => 3,
             ],
         ]);
 
