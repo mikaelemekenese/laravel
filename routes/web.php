@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\PatientController;
+use App\Http\Controllers\AppointmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +17,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return View::make('pages.welcome');
+    return View::make('welcome');
 });
 
-Route::get('reservation', function () {
-    return View::make('pages.reservation');
-});
+/* Route::get('reservation', function () {
+    return View::make('reservation');
+}); */
+
+Route::resource('doctors', DoctorController::class);
+Route::resource('patients', PatientController::class);
+Route::resource('appointments', AppointmentController::class);
